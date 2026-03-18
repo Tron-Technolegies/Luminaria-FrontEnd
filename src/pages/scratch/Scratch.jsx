@@ -30,7 +30,7 @@ export default function Scratch() {
 
     const fetchReward = async () => {
       try {
-        const response = await api.get("/reward-system");
+        const response = await api.get(`/reward-system?_t=${Date.now()}`);
         if (response.data.success) {
           setReward(response.data.reward);
         } else {
