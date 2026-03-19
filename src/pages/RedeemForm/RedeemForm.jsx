@@ -93,12 +93,22 @@ export default function RedeemForm() {
         const text = await err.response.data.text();
         try {
           const json = JSON.parse(text);
-          setError(json.message || "Failed to submit form.");
+          const errorMsg = json.message || "Failed to submit form.";
+          setError(errorMsg);
+          
+          if (errorMsg.includes("successfully claimed") || errorMsg === "Tag already used") {
+            localStorage.removeItem("luminaira_reward");
+          }
         } catch (e) {
           setError("Failed to submit form.");
         }
       } else {
-        setError(err.response?.data?.message || err.message || "An unexpected error occurred.");
+        const errorMsg = err.response?.data?.message || err.message || "An unexpected error occurred.";
+        setError(errorMsg);
+        
+        if (errorMsg.includes("successfully claimed") || errorMsg === "Tag already used") {
+          localStorage.removeItem("luminaira_reward");
+        }
       }
     } finally {
       setIsSubmitting(false);

@@ -10,9 +10,9 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="glass-panel rounded-3xl p-8 md:p-14 text-center max-w-2xl w-full mx-4 flex flex-col items-center gap-6"
+        className="glass-panel rounded-3xl p-8 md:p-14 text-center max-w-2xl w-full mx-4 flex flex-col items-center gap-2"
       >
-        <motion.div
+        {/* <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="bg-brand-purple/20 p-4 rounded-full"
@@ -27,7 +27,9 @@ export default function HomePage() {
 
         <p className="text-lg md:text-xl text-slate-300 mt-2 max-w-lg leading-relaxed">
           Experience the chemistry of automotive hygiene with our premium service. Claim your exclusive launch reward today!
-        </p>
+        </p> */}
+        <img src="/mainlogo.png" alt="main logo" className="object-cover" />
+        <p className="text-gradient text-xl">LAUNCHING SOON</p>
 
         <motion.div
           whileHover={{ scale: 1.05 }}

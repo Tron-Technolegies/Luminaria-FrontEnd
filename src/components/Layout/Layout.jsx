@@ -6,16 +6,17 @@ import { Sparkles } from "lucide-react";
 
 export default function Layout() {
   const location = useLocation();
-  
+
   return (
     <div className="relative min-h-screen flex flex-col items-center">
       <Starfield />
-      
+
       {/* Header */}
       <header className="w-full max-w-5xl mx-auto p-6 flex justify-between items-center z-10">
         <div className="flex items-center gap-2">
-          <Sparkles className="text-brand-purple w-8 h-8" />
-          <span className="text-2xl font-bold tracking-wider text-gradient">LUMINAIRA</span>
+          {/* <Sparkles className="text-brand-purple w-8 h-8" /> */}
+          {/* <span className="text-2xl font-bold tracking-wider text-gradient">LUMINAIRA</span> */}
+          <img src="/header-logo.png" className="w-16 object-cover" />
         </div>
       </header>
 
